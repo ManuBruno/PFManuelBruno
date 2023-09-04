@@ -1,7 +1,7 @@
 export const productos = [
   {
     id: 1,
-    nombre: "Stanley 1.2L",
+    nombre: "Termo Stanley 1.2L",
     precio: 59990,
     imagen: "./img/stanley.jpg",
     categoria: "termos",

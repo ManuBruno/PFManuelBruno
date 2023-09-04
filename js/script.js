@@ -59,7 +59,16 @@ function actualizarAgregar() {
 JSON.parse(sessionStorage.getItem("carrito")) === null &&
   sessionStorage.setItem("carrito", JSON.stringify([]));
 
-let carrito = JSON.parse(sessionStorage.getItem("carrito"));
+let carrito;
+
+const carritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+
+if (carritoLS) {
+  carrito = carritoLS;
+  actualizarNumero();
+} else {
+  carrito = [];
+}
 
 function agregarAlCarrito(e) {
   const idBoton = e.currentTarget.id;

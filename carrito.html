@@ -11,9 +11,19 @@
 
 <body>
   <div class="wrapper">
+    <header class="header-mobile">
+      
+        <a href="index.html"><h1 class="logo">Mateína</h1></a>
+      <button class="abrir-menu" id="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+    </header>
     <aside>
+      <button class="cerrar-menu" id="cerrar-menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
       <header>
-        <h1 class="logo">Mateína</h1>
+        <a href="index.html">
+          <h1 class="logo">Mateína</h1>
+        </a>
       </header>
       <nav>
         <ul class="menu">
@@ -31,23 +41,24 @@
     <main>
       <h2 class="titulo-principal"> Carrito</h2>
       <div class="contenedor-carrito">
-        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío <i class="fa-regular fa-face-frown"></i></p>
+        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío <i class="fa-regular fa-face-frown"></i>
+        </p>
         <div id="carrito-productos" class="carrito-productos disabled">
-          <div id="carrito-acciones" class="carrito-acciones disabled">
-            <div class="carrito-acciones-izquierda">
-              <button class="vaciar-carrito">Vaciar carrito</button>
-            </div>
-            <div class="carrito-acciones-derecha">
-              <div class="carrito-total">
-                <p>Total: </p>
-                <p id="total">$3000</p>
-              </div>
-              <button class="carrito-comprar">Comprar ahora</button>
-            </div>
-          </div>
-          <p id="carrito-comprado" class="carrito-comprado disabled">Compra realizada <i
-              class="fa-regular fa-circle-check"></i></p>
         </div>
+        <div id="carrito-acciones" class="carrito-acciones disabled">
+          <div class="carrito-acciones-izquierda">
+            <button id="vaciar-carrito" class="vaciar-carrito">Vaciar carrito</button>
+          </div>
+          <div class="carrito-acciones-derecha">
+            <div class="carrito-total">
+              <p>Total: </p>
+              <p id="total"></p>
+            </div>
+            <button id="carrito-comprar" class="carrito-comprar">Comprar ahora</button>
+          </div>
+        </div>
+        <p id="carrito-comprado" class="carrito-comprado disabled">Compra realizada <i
+            class="fa-regular fa-circle-check"></i></p>
       </div>
     </main>
 
@@ -59,6 +70,7 @@
 
     <script src="https://kit.fontawesome.com/b2c4117880.js" crossorigin="anonymous"></script>
     <script type="module" src="./db/productos.js"></script>
+    <script src="./js/menu.js"></script>
     <script type="module" src="./js/carrito.js"></script>
 </body>
 

@@ -11,9 +11,20 @@
 
 <body>
   <div class="wrapper">
-    <aside>
-      <header>
+    <header class="header-mobile">
+      <a href="index.html">
         <h1 class="logo">Mateína</h1>
+      </a>
+      <button class="abrir-menu" id="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+    </header>
+    <aside>
+      <button class="cerrar-menu" id="cerrar-menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <header>
+        <a href="index.html">
+          <h1 class="logo">Mateína</h1>
+        </a>
       </header>
       <nav>
         <ul id="filtro-categoria" class="menu">
@@ -48,6 +59,7 @@
     </main>
 
     <script type="module" src="./db/productos.js"></script>
+    <script src="./js/menu.js"></script>
     <script type="module" src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/b2c4117880.js" crossorigin="anonymous"></script>
 </body>
