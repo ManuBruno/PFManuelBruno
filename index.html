@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <aside>
+      <header>
+        <h1 class="logo">Mateína</h1>
+      </header>
+      <nav>
+        <ul id="filtro-categoria" class="menu">
+          <li><button id="todos" class="boton-menu boton-categoria active"><i class="fa-solid fa-hand-point-right"></i>
+              Todos los
+              productos</button>
+          </li>
+          <li><button id="termos" class="boton-menu boton-categoria"><i class="fa-regular fa-hand-point-right"></i>
+              Termos</button></li>
+          <li><button id="mates" class="boton-menu boton-categoria"><i class="fa-regular fa-hand-point-right"></i>
+              Mates</button></li>
+          <li><button id="materas" class="boton-menu boton-categoria"><i class="fa-regular fa-hand-point-right"></i>
+              Materas</button>
+          </li>
+          <li><button id="bombillas" class="boton-menu boton-categoria"><i class="fa-regular fa-hand-point-right"></i>
+              Bombillas</button></li>
+          <li><button id="yerbas" class="boton-menu boton-categoria"><i class="fa-regular fa-hand-point-right"></i>
+              Yerbas</button></li>
+          <li><a class="boton-menu boton-carrito" href="./carrito.html"><i class="fa-solid fa-cart-shopping"></i>
+              Carrito<span id="numero-carrito" class="numero-carrito">0</span></a></li>
+        </ul>
+      </nav>
+      <footer>
+        <p class="texto-footer">&#169 2023 Manuel Bruno</p>
+      </footer>
+    </aside>
+
+    <main>
+      <h2 class="titulo-principal">Todos los productos</h2>
+      <div id="contenedor-productos" class="contenedor-productos">
+      </div>
+    </main>
+
+    <script type="module" src="./db/productos.js"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/b2c4117880.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <aside>
+      <header>
+        <h1 class="logo">Mateína</h1>
+      </header>
+      <nav>
+        <ul class="menu">
+          <li><a class="boton-menu boton-volver" href="./index.html"><i class="fa-solid fa-arrow-left"></i>Seguir
+              comprando</a>
+          </li>
+          <li><a class="boton-menu boton-carrito active" href="./carrito.html"><i
+                class="fa-solid fa-cart-shopping"></i>Carrito</a></li>
+        </ul>
+      </nav>
+      <footer>
+        <p class="texto-footer">&#169 2023 Manuel Bruno</p>
+      </footer>
+    </aside>
+    <main>
+      <h2 class="titulo-principal"> Carrito</h2>
+      <div class="contenedor-carrito">
+        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío <i class="fa-regular fa-face-frown"></i></p>
+        <div id="carrito-productos" class="carrito-productos disabled">
+          <div id="carrito-acciones" class="carrito-acciones disabled">
+            <div class="carrito-acciones-izquierda">
+              <button class="vaciar-carrito">Vaciar carrito</button>
+            </div>
+            <div class="carrito-acciones-derecha">
+              <div class="carrito-total">
+                <p>Total: </p>
+                <p id="total">$3000</p>
+              </div>
+              <button class="carrito-comprar">Comprar ahora</button>
+            </div>
+          </div>
+          <p id="carrito-comprado" class="carrito-comprado disabled">Compra realizada <i
+              class="fa-regular fa-circle-check"></i></p>
+        </div>
+      </div>
+    </main>
+
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/b2c4117880.js" crossorigin="anonymous"></script>
+    <script type="module" src="./db/productos.js"></script>
+    <script type="module" src="./js/carrito.js"></script>
+</body>
+
+</html>
