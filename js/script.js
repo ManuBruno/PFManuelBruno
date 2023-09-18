@@ -1,4 +1,11 @@
-export let productosDisponibles = JSON.parse(localStorage.getItem("productos"));
+let productos = [];
+
+fetch("./js/productos.json")
+  .then((response) => response.json())
+  .then((data) => {
+    productos = data;
+    cargarProductos(productos);
+  });
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategoria = document.querySelectorAll(".boton-categoria");
 const filtroCategoria = document.getElementById("filtro-categoria");
@@ -6,7 +13,7 @@ const numeroCarrito = document.querySelector("#numero-carrito");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
 
 document.addEventListener("DOMContentLoaded", () => {
-  cargarProductos(productosDisponibles);
+  cargarProductos(productos);
 });
 
 const cargarProductos = (productos) => {
@@ -40,12 +47,12 @@ botonesCategoria.forEach((boton) => {
 filtroCategoria.addEventListener("click", (e) => {
   const categoriaFiltrada = e.target.innerText.toLowerCase();
   if (categoriaFiltrada !== "todos los productos") {
-    const productosFiltrados = productosDisponibles.filter((producto) =>
+    const productosFiltrados = productos.filter((producto) =>
       producto.categoria.toLowerCase().includes(categoriaFiltrada)
     );
     cargarProductos(productosFiltrados);
   } else {
-    cargarProductos(productosDisponibles);
+    cargarProductos(productos);
   }
 });
 
@@ -71,10 +78,24 @@ if (carritoLS) {
 }
 
 function agregarAlCarrito(e) {
+  Toastify({
+    text: "Producto Agregado",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "center", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to top, #970747, #c93879)",
+      borderRadius: "2rem",
+      textTransform: "uppercase",
+    },
+    onClick: function () {}, // Callback after click
+  }).showToast();
   const idBoton = e.currentTarget.id;
-  const productoAgregado = productosDisponibles.find(
-    (producto) => producto.id == idBoton
-  );
+  const productoAgregado = productos.find((producto) => producto.id == idBoton);
   if (carrito.some((producto) => producto.id == idBoton)) {
     const index = carrito.findIndex((producto) => producto.id == idBoton);
     carrito[index].cantidad++;
